@@ -1,0 +1,27 @@
+(v2ray_proxy) {
+    log {
+        output file /var/log/access.log {
+                roll_size 1gb
+                roll_keep 5
+                roll_keep_for 720h
+        }
+    }
+    tls {
+        protocols tls1.2 tls1.3
+        ciphers TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256
+        curves x25519
+    }
+    @v2ray_websocket {
+        path /ws
+        header Connection *Upgrade*
+        header Upgrade websocket
+    }
+    # {args.0} 表示第一个参数
+    reverse_proxy @v2ray_websocket {args.0}
+    # 不匹配以上规则的会匹配到这里兜底
+    reverse_proxy https://www.debian.org
+}
+
+test.example.com {
+    import v2ray_proxy v2ray:8001
+}
