@@ -17,8 +17,18 @@ services:
       - "443:443"
       - "443:443/udp"
     volumes:
-      - $PWD/caddy:/etc/caddy:ro
-      - $PWD/log/caddy:/var/log
-    restart: unless-stopped
+      - ./caddy:/etc/caddy:ro
+      - ./log/caddy:/var/log
+      - ./www:/var/www/goaccess:ro
     sysctls:
       - net.ipv4.tcp_congestion_control=bbr
+
+  goaccess:
+    image: "docker.io/hectorm/goaccess:latest"
+    restart: "on-failure:3"
+    volumes:
+      - "./goaccess.conf:/etc/goaccess/goaccess.conf:ro"
+      - "./log/caddy/:/var/log/caddy/:ro"
+      - "./www:/var/www/goaccess/"
+    depends_on:
+      - "caddy"

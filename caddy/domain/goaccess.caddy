@@ -1,0 +1,19 @@
+log.example.com {
+	basicauth * {
+		<username> <hashed_password>
+	}
+
+	root * /var/www/goaccess/
+	file_server * browse
+
+	@websockets {
+		header Connection *Upgrade*
+		header Upgrade websocket
+	}
+	reverse_proxy @websockets goaccess:7890
+
+	log {
+		output discard
+		format console
+	}
+}
