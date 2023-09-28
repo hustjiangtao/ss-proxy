@@ -22,6 +22,6 @@
     reverse_proxy https://www.debian.org
 }
 
-test.example.com {
+{$V2RAY_DOMAIN} {
     import v2ray_proxy v2ray:8001
 }

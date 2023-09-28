@@ -20,6 +20,8 @@ services:
       - ./caddy:/etc/caddy:ro
       - ./log/caddy:/var/log
       - ./www:/var/www/goaccess:ro
+    env_file:
+      - .env
     sysctls:
       - net.ipv4.tcp_congestion_control=bbr
 

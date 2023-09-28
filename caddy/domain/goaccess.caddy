@@ -1,6 +1,6 @@
-log.example.com {
+{$GOACCESS_DOMAIN} {
 	basicauth * {
-		<username> <hashed_password>
+		{$GOACCESS_USERNAME} {$GOACCESS_HASHED_PASSWORD}
 	}
 
 	root * /var/www/goaccess/

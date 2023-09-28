@@ -1,5 +1,5 @@
-:443, ss.example.com {
-  tls me@example.com
+:443, {$DOMAIN} {
+  tls {$EMAIL}
   route {
     forward_proxy {
       basic_auth <username> <password>
