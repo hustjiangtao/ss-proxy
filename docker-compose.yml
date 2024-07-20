@@ -1,6 +1,7 @@
 version: "3"
 services:
   v2ray:
+    container_name: v2ray
     restart: always
     image: v2fly/v2fly-core:v4.45.2
     volumes:
@@ -30,15 +31,16 @@ services:
       - app_net
       - default
 
-  goaccess:
-    image: "docker.io/hectorm/goaccess:latest"
-    restart: "on-failure:3"
-    volumes:
-      - "./goaccess.conf:/etc/goaccess/goaccess.conf:ro"
-      - "./log/caddy/:/var/log/caddy/:ro"
-      - "./www:/var/www/goaccess/"
-    depends_on:
-      - "caddy"
+  # goaccess:
+  #   container_name: goaccess
+  #   image: "docker.io/hectorm/goaccess:latest"
+  #   restart: "on-failure:3"
+  #   volumes:
+  #     - "./goaccess.conf:/etc/goaccess/goaccess.conf:ro"
+  #     - "./log/caddy/:/var/log/caddy/:ro"
+  #     - "./www:/var/www/goaccess/"
+  #   depends_on:
+  #     - "caddy"
 
 networks:
   app_net:
