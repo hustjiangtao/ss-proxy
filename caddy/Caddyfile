@@ -1,3 +1,7 @@
+:80 {
+  redir http://127.0.0.1
+}
+
 :443, {$DOMAIN} {
   tls {$EMAIL}
   route {
