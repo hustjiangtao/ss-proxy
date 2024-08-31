@@ -13,7 +13,8 @@ services:
 
   caddy:
     container_name: caddy
-    build: .
+    # build: .
+    image: ghcr.io/hustjiangtao/ss-proxy:latest
     restart: unless-stopped
     ports:
       - "80:80"
