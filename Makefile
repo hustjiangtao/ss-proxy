@@ -2,6 +2,7 @@
 # Usage: make login build push
 # Note: replace `your-github-username` and `your-repo-name` with your github username and repository name
 # Note: replace `GITHUB_TOKEN` with your github token
+# refer: https://www.chenshaowen.com/blog/github-container-registry.html
 
 YOUR_GITHUB_USERNAME=hustjiangtao
 YOUR_REPO_NAME=ss-proxy
