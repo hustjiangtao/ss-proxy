@@ -1,5 +1,10 @@
 name: 构建Docker镜像
 
+# 添加权限设置
+permissions:
+  contents: read
+  packages: write
+
 on:
   push:
     branches: [main]
