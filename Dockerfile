@@ -7,4 +7,9 @@ RUN xcaddy build \
 
 FROM caddy:2
 
+# 添加容器元数据，这对 GitHub Container Registry 很重要
+LABEL org.opencontainers.image.source="https://github.com/hustjiangtao/ss-proxy"
+LABEL org.opencontainers.image.description="Caddy server with naive proxy support"
+LABEL org.opencontainers.image.licenses="AGPL-3.0"
+
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
