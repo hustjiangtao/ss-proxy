@@ -42,3 +42,4 @@
 - 2026-06-14T04:19:40Z | ghcr.io/hustjiangtao/ss-proxy:latest ghcr.io/hustjiangtao/ss-proxy:20260614 | commit 1c781059256465af5e2bf3d3b659957a25966190 | by hustjiangtao | run 
 - 2026-06-21T04:26:24Z | ghcr.io/hustjiangtao/ss-proxy:latest ghcr.io/hustjiangtao/ss-proxy:20260621 | commit 9c828dff3875b07428b79b13c9d60725016c29a6 | by hustjiangtao | run 
 - 2026-06-28T04:03:28Z | ghcr.io/hustjiangtao/ss-proxy:latest ghcr.io/hustjiangtao/ss-proxy:20260628 | commit 48017d7b9e25dee1acbd34698fe3b588358002e7 | by hustjiangtao | run 
+- 2026-07-05T03:38:39Z | ghcr.io/hustjiangtao/ss-proxy:latest ghcr.io/hustjiangtao/ss-proxy:20260705 | commit 538e633ab60328ae6db120bfbce3413871cfc330 | by hustjiangtao | run 
