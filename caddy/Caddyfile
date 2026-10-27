@@ -17,9 +17,7 @@
       hide_via
       probe_resistance
     }
-    reverse_proxy https://www.bing.com {
-        header_up Host {upstream_hostv4}
-    }
+    reverse_proxy https://ubuntu.com
   }
 }
 
