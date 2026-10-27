@@ -2,6 +2,12 @@
   redir http://127.0.0.1
 }
 
+127.0.0.1:443, localhost:443 {
+  respond 403 {
+    close
+  }
+}
+
 :443, {$DOMAIN} {
   tls {$EMAIL}
   route {
@@ -11,9 +17,11 @@
       hide_via
       probe_resistance
     }
-    reverse_proxy https://www.debian.org
+    reverse_proxy https://www.bing.com {
+        header_up Host {upstream_hostv4}
+    }
   }
 }
 
 # import other caddyfile
-import domain/*.caddy
+# import domain/*.caddy
